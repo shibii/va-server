@@ -8,6 +8,17 @@
   },
   "author": "Seppo Kilpeläinen",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shibii/va-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shibii/va-server/issues"
+  },
+  "homepage": "https://github.com/shibii/va-server#readme",
+  "keywords": [
+    "vacancy-aggregator"
+  ],
   "dependencies": {
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",
