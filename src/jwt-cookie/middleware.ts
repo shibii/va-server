@@ -15,8 +15,7 @@ export const middleware = (
   ...config: Array<jwt.VerifyOptions>
 ) => {
   if (config.length === 0)
-    throw new JwtCookieError(
-      401,
+    throw new Error(
       "jsonwebtoken library verification function parameters not passed to middleware"
     );
 
