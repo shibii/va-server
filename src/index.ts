@@ -7,11 +7,14 @@ import cookieParser from "cookie-parser";
 import { middleware, errorHandler } from "./jwt-cookie";
 import { me } from "./routes/me";
 import { vacancies } from "./routes/vacancies";
+import { authentication } from "./routes/authentication";
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
+
+app.use("/api", authentication);
 
 app.use(
   middleware(process.env.JWT_SECRET_PRIVATE!, {
