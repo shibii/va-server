@@ -55,7 +55,7 @@ exports.middleware = function (key) {
         config[_i - 1] = arguments[_i];
     }
     if (config.length === 0)
-        throw new JwtCookieError_1.JwtCookieError(401, "jsonwebtoken library verification function parameters not passed to middleware");
+        throw new Error("jsonwebtoken library verification function parameters not passed to middleware");
     return function (req, resp, next) { return __awaiter(void 0, void 0, void 0, function () {
         var payload;
         return __generator(this, function (_a) {
