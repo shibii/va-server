@@ -7,15 +7,14 @@ var path_1 = __importDefault(require("path"));
 var dotenv_1 = __importDefault(require("dotenv"));
 dotenv_1.default.config({ path: path_1.default.join(__dirname, ".env") });
 var express_1 = __importDefault(require("express"));
-var body_parser_1 = __importDefault(require("body-parser"));
 var cookie_parser_1 = __importDefault(require("cookie-parser"));
 var jwt_cookie_1 = require("./jwt-cookie");
 var me_1 = require("./routes/me");
 var vacancies_1 = require("./routes/vacancies");
 var authentication_1 = require("./routes/authentication");
 var app = express_1.default();
-app.use(body_parser_1.default.urlencoded({ extended: false }));
-app.use(body_parser_1.default.json());
+app.use(express_1.default.urlencoded({ extended: false }));
+app.use(express_1.default.json());
 app.use(cookie_parser_1.default());
 app.use("/api", authentication_1.authentication);
 app.use(jwt_cookie_1.middleware(process.env.JWT_SECRET_PRIVATE, {
